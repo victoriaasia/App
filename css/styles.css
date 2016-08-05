@@ -1,0 +1,24 @@
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: #eaf5ee; }
+
+ul {
+  padding: 0; }
+
+li {
+  list-style-type: none; }
+
+.wrapper .directories {
+  padding: 25px 20px; }
+  .wrapper .directories .title {
+    font-weight: 500; }
+.wrapper .nav__item {
+  padding: 7px 0; }
+  .wrapper .nav__item .link {
+    color: #0059bd;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    border-bottom: 1px solid #bad6e4; }
+    .wrapper .nav__item .link:hover {
+      color: #bad6e4; }

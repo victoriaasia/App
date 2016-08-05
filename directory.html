@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.css">
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100&subset=cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+<div class="directories">
+  <h1 class="title"></h1>
+   <div>
+    <table id="dir-table">
+   <thead>
+
+         </thead>
+       <tbody>
+
+        </tbody>
+    </table>
+   </div>
+
+</div>
+</div>
+
+
+
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+<script>
+
+$(function() {
+  // var directory = [];
+
+   $.getJSON('json/getDirectory.json', function(data) {
+       $.each(data.response.directory.fields, function(i, item) {
+         var tblHead = "<th>" + item.name + "</th>"
+          $(tblHead).appendTo("#dir-table thead");
+     });
+
+       $.each(data.response.directory.items, function(i, item) {
+         var tblBody = "<tr>" + "<td>" + item.name + "</td>" +
+             "<td>" + item.weight + "</td>" + "<td>" + item.point + "</td>" + "<td>" + item.endDate + "</td>" + "</tr>"
+             $(tblBody).appendTo("#dir-table tbody");
+   });
+
+});
+
+});
+
+</script>
+
+</body>
+</html>

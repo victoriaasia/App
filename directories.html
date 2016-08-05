@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/4.2.0/normalize.css">
+<link href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,300,100&subset=cyrillic-ext,cyrillic' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+
+<div class="wrapper">
+<div class="directories">
+  <h1 class="title">Справочники</h1>
+   <div id="menu">
+    <ul class="nav">
+    </ul>
+   </div>
+
+</div>
+</div>
+
+
+
+
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+
+<script>
+
+$(function() {
+  // var directories = [];
+
+   $.getJSON('json/getDirectories.json', function(data) {
+       $.each(data.response.directories, function(i, item) {
+          var list = "<li class='nav__item'>" + "<a href='#' class='link'>" + item.name + "</a>" + "</li>"
+           $(list).appendTo("#menu ul");
+     });
+
+   });
+
+});
+</script>
+
+</body>
+</html>
