@@ -3,23 +3,114 @@
 body
   font-family: 'Roboto', sans-serif
   background-color: $background
+  padding: 0 0 40px
 ul
   padding: 0
 li
   list-style-type: none
+.clearfix::after
+  content: ""
+  display: table
+  clear: both
 .wrapper
-  .directories
-    padding: 25px 20px
+  &__inner
+    padding: 40px 30px
     .title
       font-weight: 500
-  .nav
-    &__item
-      padding: 7px 0
-      .link
+      margin-bottom: 30px
+    .container
+      width: 50%
+      &-right
+        float: right
+      &-left
+        float: left
+    .nav
+      margin: 0
+      &__item
+        padding: 7px 0
+    .link
+      font-weight: 500
+      font-size: 14px
+      text-decoration: none
+      .underline
+        text-decoration: underline
+        color: $lightBlue
+      span
         color: $blue
-        font-weight: 500
-        font-size: 14px
-        text-decoration: none
-        border-bottom: 1px solid $lightBlue
         &:hover
           color: $lightBlue
+    .header
+      .breadcrumbs
+        .link
+          position: relative
+          &::after
+            content: ''
+            display: inline-block
+            background-image: url('../svg/arrow-right.svg')
+            width: 15px
+            height: 15px
+            background-size: contain
+            background-repeat: no-repeat
+            position: absolute
+            right: -20px
+            top: 1px
+    .btn-new
+      background: #99fcaf
+      background-image: linear-gradient(to bottom, $lightGreen, $green)
+      // font-weight: 500
+      border: 0
+      outline: none
+      font-weight: 500
+      font-size: 14px
+      box-shadow: 2px 2px 3px 0px $shadow
+      padding: 10px 20px
+      border-radius: 10px
+      cursor: pointer
+    .dir-table
+      font-size: 14px
+      font-weight: 500
+      border-collapse: collapse
+      width: 100%
+      &__title
+        display: block
+        padding: 10px 0
+        th:first-child
+          width: 18vw
+          padding: 10px 20px
+        th
+          width: 10vw
+          font-weight: 500
+          padding: 10px 0
+          text-align: left
+      &__body
+        display: block
+        background-color: $white
+        border-radius: 10px
+        box-shadow: 4px 3px 22px 0px $shadow
+        .row
+          border-bottom: 1px solid $lightGray
+          > td
+            width: 10vw
+          .err-name
+            width: 18vw
+            padding: 20px
+    .filter
+      margin-left: 40px
+      &__title
+        padding: 20px
+        font-size: 14px
+        font-weight: 500
+      &__field
+        border: 1px solid $gray
+        border-radius: 10px
+        padding: 20px 20px 50px
+        width: 200px
+        text-align: center
+        input
+          width: 100%
+          border: 1px solid $gray
+          border-radius: 3px
+          padding: 3px
+          font-size: 12px
+          color: $gray
+          outline: none

@@ -11,18 +11,29 @@
 <body>
 
 <div class="wrapper">
-<div class="directories">
-  <h1 class="title"></h1>
-   <div>
-    <table id="dir-table">
-   <thead>
+<div class="wrapper__inner">
+<div class="header">
+  <ul class="breadcrumbs"><li><a href="#" class="link"><span class='underline'><span>Справочники</span></span></a></li></ul>
+  <h1 class="title">Типы ошибок</h1>
+  <button class="btn-new">+ Создать новый</button>
+</div>
 
-         </thead>
-       <tbody>
+<div class="container container-left">
+  <table id="dir-table" class="dir-table sieve">
+   <thead class="dir-table__title"></thead>
+   <tbody class="dir-table__body"></tbody>
+ </table>
+</div>
 
-        </tbody>
-    </table>
-   </div>
+<div class="container container-right">
+  <div class="filter">
+    <div class="filter__title">Фильтр</div>
+    <div class="filter__field"><input type="search" id="search" placeholder="Поиск"></div>
+  </div>
+</div>
+
+<div class="clearfix"></div>
+
 
 </div>
 </div>
@@ -31,28 +42,44 @@
 
 
 
-<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 
 <script>
-
 $(function() {
   // var directory = [];
-
    $.getJSON('json/getDirectory.json', function(data) {
-       $.each(data.response.directory.fields, function(i, item) {
-         var tblHead = "<th>" + item.name + "</th>"
-          $(tblHead).appendTo("#dir-table thead");
-     });
+
+     $.each(data.response.directory.fields, function(i, item) {
+       var rowHead = "<th>" + item.name + "</th>"
+        $(rowHead).appendTo("#dir-table thead");
+   });
 
        $.each(data.response.directory.items, function(i, item) {
-         var tblBody = "<tr>" + "<td>" + item.name + "</td>" +
-             "<td>" + item.weight + "</td>" + "<td>" + item.point + "</td>" + "<td>" + item.endDate + "</td>" + "</tr>"
-             $(tblBody).appendTo("#dir-table tbody");
+         var tblBody = "<tr class='row'>" +
+         "<td class='err-name'>" + "<a href='#' class='link'>" + "<span class='underline'>" + "<span>" + item.name + "</span>" + "</span>" + "</a>" + "</td>" +
+          "<td>" + item.weight + "</td>" +
+          "<td>" + item.point + "</td>" +
+          "<td>" + item.endDate + "</td>" +
+          "</tr>"
+            $(tblBody).appendTo("#dir-table tbody");
    });
 
 });
 
 });
+
+</script>
+
+<script>
+
+$("#search").keyup(function() {
+        var value = this.value.toLowerCase().trim();
+
+        $("table").find("tr").each(function(index) {
+            var id = $(this).find("td").text().toLowerCase().trim();
+            $(this).toggle(id.indexOf(value) !== -1);
+        });
+    });
 
 </script>
 

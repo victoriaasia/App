@@ -11,8 +11,9 @@
 <body>
 
 <div class="wrapper">
-<div class="directories">
+<div class="wrapper__inner">
   <h1 class="title">Справочники</h1>
+
    <div id="menu">
     <ul class="nav">
     </ul>
@@ -34,7 +35,7 @@ $(function() {
 
    $.getJSON('json/getDirectories.json', function(data) {
        $.each(data.response.directories, function(i, item) {
-          var list = "<li class='nav__item'>" + "<a href='#' class='link'>" + item.name + "</a>" + "</li>"
+          var list = "<li class='nav__item'>" + "<a href='#' class='link'>" + "<span class='underline'>" + "<span>" + item.name + "</span>" + "</span>" + "</a>" + "</li>"
            $(list).appendTo("#menu ul");
      });
 
