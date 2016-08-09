@@ -13,24 +13,27 @@
 <div class="wrapper">
 <div class="wrapper__inner">
 <div class="header">
-  <ul class="breadcrumbs"><li><a href="#" class="link"><span class='underline'><span>Справочники</span></span></a></li></ul>
-  <h1 class="title">Типы ошибок</h1>
-  <button class="new btn btn-green">+ Создать новый</button>
+  <ul class="breadcrumbs"><li><a href="#" class="link"><span class='underline'><span>Справочники</span></span></a></li><li><a href="#" class="link"><span class='underline'><span>Типы ошибок</span></span></a></li></ul>
+  <h1 class="title">Грамматическая ошибка</h1>
 </div>
 
-<div class="container container-left">
-  <table id="dir-table" class="dir-table sieve">
-   <thead class="dir-table__title"></thead>
-   <tbody class="dir-table__body"></tbody>
- </table>
+<div class="container">
+
+<form class="entry-table" id="entry-table" action="">
+
+
+</form>
+
+
+<div class="entry-buttons">
+<input type="button" value="Сохранить" class="save btn btn-green">
+<input type="button" value="Отменить изменения" class="undo btn btn-gray">
+<input type="button" value="Удалить" class="delete btn btn-gray">
 </div>
 
-<div class="container container-right">
-  <div class="filter">
-    <div class="filter__title">Фильтр</div>
-    <div class="filter__field"><input type="search" id="search" placeholder="Поиск"></div>
-  </div>
 </div>
+
+
 
 <div class="clearfix"></div>
 
@@ -44,6 +47,7 @@
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"></script>
 <script src="js/script.js"></script>
+
 
 </body>
 </html>

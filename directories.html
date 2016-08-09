@@ -27,22 +27,8 @@
 
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+<script src="js/script.js"></script>
 
-<script>
-
-$(function() {
-  // var directories = [];
-
-   $.getJSON('json/getDirectories.json', function(data) {
-       $.each(data.response.directories, function(i, item) {
-          var list = "<li class='nav__item'>" + "<a href='#' class='link'>" + "<span class='underline'>" + "<span>" + item.name + "</span>" + "</span>" + "</a>" + "</li>"
-           $(list).appendTo("#menu ul");
-     });
-
-   });
-
-});
-</script>
 
 </body>
 </html>

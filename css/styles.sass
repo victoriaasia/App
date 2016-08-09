@@ -54,10 +54,13 @@ li
             position: absolute
             right: -20px
             top: 1px
-    .btn-new
-      background: #99fcaf
-      background-image: linear-gradient(to bottom, $lightGreen, $green)
-      // font-weight: 500
+        li
+          display: inline
+        li:not(:first-child)
+          margin-left: 25px
+    .btn
+      font-size: 14px
+      font-weight: 500
       border: 0
       outline: none
       font-weight: 500
@@ -66,6 +69,12 @@ li
       padding: 10px 20px
       border-radius: 10px
       cursor: pointer
+    .btn-green
+      background: #99fcaf
+      background-image: linear-gradient(to bottom, $lightGreen, $green)
+    .btn-gray
+      background: $lightGray
+      background-image: linear-gradient(to bottom, $white, $gray)
     .dir-table
       font-size: 14px
       font-weight: 500
@@ -114,3 +123,23 @@ li
           font-size: 12px
           color: $gray
           outline: none
+
+.entry-table
+  font-size: 14px
+  font-weight: 500
+  .row
+    padding: 10px 0
+  .entry-title
+    width: 220px
+    display: inline-block
+  input
+    font-size: 12px
+    padding: 3px 7px
+    border-radius: 5px
+    height: 25px
+    border: 1px solid $gray
+    outline: none
+.entry-buttons
+  margin-top: 25px
+  .undo
+    margin: 0 15px
