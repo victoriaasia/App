@@ -128,6 +128,8 @@ li
   font-size: 14px
   font-weight: 500
   .row
+    display: flex
+    align-items: center
     padding: 10px 0
   .entry-title
     width: 220px
@@ -136,10 +138,43 @@ li
     font-size: 12px
     padding: 3px 7px
     border-radius: 5px
-    height: 25px
+    height: 19px
     border: 1px solid $gray
     outline: none
+  textarea, select
+    padding: 3px 7px
+    outline: none
+    border: 1px solid $gray
+    border-radius: 5px
+    font-size: 12px
+    font-weight: 500
+  textarea
+    padding-top: 8px
+  .ui-datepicker-trigger
+    position: relative
+    top: -0.5px
+    right: 27px
+    cursor: pointer
+  #name, #describe
+    width: 230px
+  #endDate
+    width: 100px
+  #weight, #point
+    width: 45px
 .entry-buttons
   margin-top: 25px
   .undo
     margin: 0 15px
+
+#ui-datepicker-div
+  font-size: 12px
+  .ui-state-default, .ui-widget-content .ui-state-default, .ui-state-hover
+    background: #99fcaf
+    background-image: linear-gradient(to bottom, $lightGreen, $green)
+    border: none
+    border-radius: 3px
+    color: $black
+    text-align: center
+.ui-widget-content, .ui-datepicker-header
+  background: $white
+  border-color: $lightGray

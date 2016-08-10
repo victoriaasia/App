@@ -129,6 +129,14 @@ li {
   font-size: 14px;
   font-weight: 500; }
   .entry-table .row {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
     padding: 10px 0; }
   .entry-table .entry-title {
     width: 220px;
@@ -137,11 +145,46 @@ li {
     font-size: 12px;
     padding: 3px 7px;
     border-radius: 5px;
-    height: 25px;
+    height: 19px;
     border: 1px solid #cccccc;
     outline: none; }
+  .entry-table textarea, .entry-table select {
+    padding: 3px 7px;
+    outline: none;
+    border: 1px solid #cccccc;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 500; }
+  .entry-table textarea {
+    padding-top: 8px; }
+  .entry-table .ui-datepicker-trigger {
+    position: relative;
+    top: -0.5px;
+    right: 27px;
+    cursor: pointer; }
+  .entry-table #name, .entry-table #describe {
+    width: 230px; }
+  .entry-table #endDate {
+    width: 100px; }
+  .entry-table #weight, .entry-table #point {
+    width: 45px; }
 
 .entry-buttons {
   margin-top: 25px; }
   .entry-buttons .undo {
     margin: 0 15px; }
+
+#ui-datepicker-div {
+  font-size: 12px; }
+  #ui-datepicker-div .ui-state-default, #ui-datepicker-div .ui-widget-content .ui-state-default, #ui-datepicker-div .ui-state-hover {
+    background: #99fcaf;
+    background-image: -webkit-linear-gradient(top, #99fcaf, #71d588);
+    background-image: linear-gradient(to bottom, #99fcaf, #71d588);
+    border: none;
+    border-radius: 3px;
+    color: #000000;
+    text-align: center; }
+
+.ui-widget-content, .ui-datepicker-header {
+  background: #ffffff;
+  border-color: #dddddd; }
