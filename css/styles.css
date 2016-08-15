@@ -9,6 +9,9 @@ ul {
 li {
   list-style-type: none; }
 
+select::-ms-expand {
+  display: none; }
+
 .clearfix::after {
   content: "";
   display: table;
@@ -113,9 +116,9 @@ li {
     .wrapper__inner .filter__field {
       border: 1px solid #cccccc;
       border-radius: 10px;
-      padding: 20px 20px 50px;
+      padding: 20px;
       width: 200px;
-      text-align: center; }
+      height: 70px; }
       .wrapper__inner .filter__field input {
         width: 100%;
         border: 1px solid #cccccc;
